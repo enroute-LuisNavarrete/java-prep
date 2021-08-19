@@ -16,9 +16,6 @@ public class AbstractClass extends TestAbstractClass {
 		String stringAmend = " and its value could be change super.abstratVariable=" + super.abstratVariable;
 		return stringOriginal + " " + stringAmend;
 	}
-
-	
-		
 	
 }
 

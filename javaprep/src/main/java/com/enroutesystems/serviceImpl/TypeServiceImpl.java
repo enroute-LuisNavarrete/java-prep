@@ -7,6 +7,7 @@ import com.enroutesystems.modifiers.dto.TypeDTO;
 import com.enroutesystems.types.AbstractClass;
 import com.enroutesystems.types.ClassUsingInterface;
 import com.enroutesystems.types.FinalClass;
+import com.enroutesystems.types.LambdaClass;
 import com.enroutesystems.types.StaticClass;
 
 public class TypeServiceImpl {
@@ -29,13 +30,16 @@ public class TypeServiceImpl {
 
 		// FINAL EXAMPLE
 		response.add(getAbstractExample());
+		
+		// LAMBDA EXAMPLE
+		response.add(getLambdaExample());
 
 		return response;
 
 	}
 	
 	/** 
-	 * <h1>Final EXAMPLE</h1>
+	 * <h1>FINAL EXAMPLE</h1>
 	 * <b>getFinalExample</b> will get the test cases about Final keyword
 	 * **/
 	private TypeDTO getFinalExample() {
@@ -112,8 +116,8 @@ public class TypeServiceImpl {
 	 * **/
 	private TypeDTO getAbstractExample() {
 		AbstractClass  abstractClass    = new AbstractClass(); 
-		List<String> abstractTest     = new ArrayList<String>();
-		TypeDTO      abstractResponse = new TypeDTO();
+		List<String>   abstractTest     = new ArrayList<String>();
+		TypeDTO        abstractResponse = new TypeDTO();
 		
 		// Setting the name of test
 		abstractResponse.setName( "ABSTRACT EXAMPLE" );
@@ -126,6 +130,45 @@ public class TypeServiceImpl {
 		abstractResponse.setResponse( abstractTest );
 		
 		return abstractResponse;
+	}
+	
+	/** 
+	 * <h1>LAMBDA EXAMPLE</h1>
+	 * <b>getLambdaExample</b> will get the test cases about Static keyword
+	 * **/
+	private TypeDTO getLambdaExample() {
+		List< LambdaClass<String, String> > lambdaInterface = new ArrayList< LambdaClass<String, String> >();
+//		new LambdaClass<String, String>();
+		List<String>   lambdaTest     = new ArrayList<String>();
+		TypeDTO        lambdaResponse = new TypeDTO();
+		
+		// Setting the name of test
+		lambdaResponse.setName( "lambda EXAMPLE" );
+		
+		// setting the test cases for this type
+		lambdaTest.add( "Adding lambda values. Size of Lambda Interface list: " + lambdaInterface.size() );
+		
+		LambdaClass<String, String>  item1 = new LambdaClass<String, String>("item1", "Red"  );
+		LambdaClass<String, String>  item2 = new LambdaClass<String, String>("item2", "Blue" );
+		LambdaClass<String, String>  item3 = new LambdaClass<String, String>("item3", "Red"  );
+		LambdaClass<String, String>  item4 = new LambdaClass<String, String>("item4", "Green");
+		
+		lambdaInterface.add( item1 );
+		lambdaInterface.add( item2 );
+		lambdaInterface.add( item3 );
+		lambdaInterface.add( item4 );
+		
+		lambdaTest.add( "Total of lambda values. Size of Lambda Interface list: " + lambdaInterface.size() );
+		lambdaInterface.forEach(System.out::println);
+		StringBuilder lambdaTmp = new StringBuilder("");
+		lambdaInterface.forEach(e -> { lambdaTmp.append( e.toString() ); } );
+		lambdaTest.add( "lambdaInterface.forEach(e -> { lambdaTmp.append( e.toString() ); } );  lambdaTmp::" +    lambdaTmp  );
+		lambdaTest.add( "lambdaInterface.stream().filter(e -> e.getValue() == \"Red\")  lambdaTmp::" +    lambdaInterface.stream().filter(e -> e.getValue() == "Red")  );
+		
+		// line below will add the entire Test to Data Transfer Object
+		lambdaResponse.setResponse( lambdaTest );
+		
+		return lambdaResponse;
 	}
 	
 }

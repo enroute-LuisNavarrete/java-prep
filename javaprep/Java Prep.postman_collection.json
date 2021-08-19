@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "b6cda5e6-d27c-49e8-a5f3-ffe96bdde296",
+		"name": "Java Prep",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Modifiers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "types",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Keywords",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "JDBC",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/java-prep/jdbc",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"java-prep",
+						"jdbc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Errors/Exceptions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}
