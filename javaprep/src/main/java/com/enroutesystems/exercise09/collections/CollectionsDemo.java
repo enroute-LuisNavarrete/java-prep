@@ -108,7 +108,7 @@ public class CollectionsDemo {
 		System.out.println();
 		System.out.println();
 		System.out.println();
-		
+		/*------------HashSet implementation----------------*/
 		System.out.println("HashSet Example");
 		Map<Integer, String> hm=new HashMap<Integer, String>();  
 		//adding elements to the HashMap  
@@ -121,7 +121,7 @@ public class CollectionsDemo {
 		}  
 		/*------------TreeMap implementation----------------*/  
 		
-		System.out.println("TreeSet Example");
+		System.out.println("TreeMap Example");
 		Map<Integer, String> tm=new TreeMap<Integer, String>();  
 		//adding elements to the TreeMap  
 		tm.put(9, "Romeo");  
@@ -132,6 +132,7 @@ public class CollectionsDemo {
 			System.out.println(entry.getKey() + " = " + entry.getValue());
 		}
 		
+		/*------------HashTable implementation----------------*/
 		// SortedSet uses comparator
 		System.out.println("HashTable Example");
 		// Hashtable<K, V>
